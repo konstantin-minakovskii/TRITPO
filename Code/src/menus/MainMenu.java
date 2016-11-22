@@ -1,6 +1,3 @@
-/**
- * @author Richard Cui
- */
 package menus;
 
 import javax.swing.*;
