@@ -6,16 +6,16 @@ import piece.Piece;
 import util.Constants;
 
 public class Board implements Serializable {
-	
+
 	private static final long serialVersionUID = 824461096453998426L;
-	private Loc[][] loc;
+	private Location[][] loc;
 	private int turn;
 
 	public Board() {
-		loc = new Loc[Constants.BOARD_SIZE][Constants.BOARD_SIZE];
+		loc = new Location[Constants.BOARD_SIZE][Constants.BOARD_SIZE];
 		for (int r = 0; r < Constants.BOARD_SIZE; r++) {
 			for (int c = 0; c < Constants.BOARD_SIZE; c++) {
-				loc[r][c] = new Loc(r, c);
+				loc[r][c] = new Location(r, c);
 			}
 		}
 	}
@@ -38,11 +38,11 @@ public class Board implements Serializable {
 		return ret;
 	}
 
-	public Loc getLoc(int row, int column) {
+	public Location getLoc(int row, int column) {
 		return loc[row][column];
 	}
 
-	public void setLoc(Loc l, int row, int column) {
+	public void setLoc(Location l, int row, int column) {
 		loc[row][column] = l;
 	}
 

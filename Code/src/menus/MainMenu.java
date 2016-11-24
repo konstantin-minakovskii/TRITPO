@@ -1,6 +1,3 @@
-/**
- * @author Richard Cui
- */
 package menus;
 
 import javax.swing.*;
@@ -14,9 +11,12 @@ import util.Constants;
 public class MainMenu extends JFrame {
 
 	public static JTextField nameTextField;
-
+	
+	/**
+	* Creating main menu window
+	*/
 	public MainMenu() {
-		setTitle("Bughouse | Version 0.0");
+		setTitle("Bughouse chess");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(300, 500);

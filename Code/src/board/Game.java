@@ -108,8 +108,7 @@ public class Game implements Serializable {
 	}
 
 	public void move(int b, int iRow, int iColumn, int fRow, int fColumn) {
-		boards[b].placePiece(boards[b].removePiece(iRow, iColumn), fRow,
-				fColumn);
+		boards[b].placePiece(boards[b].removePiece(iRow, iColumn), fRow, fColumn);
 	}
 
 	public boolean isValidMove(int row, int column) {
@@ -129,6 +128,7 @@ public class Game implements Serializable {
 	}
 
 	// start of netcode
+	
 	public void ready() {
 		ready = true;
 	}
@@ -152,7 +152,7 @@ public class Game implements Serializable {
 	}
 
 	public void initServer() {
-		while (!ready) { // wait until server says ready
+		while (!ready) { // wait until server answer
 			try {
 				TimeUnit.NANOSECONDS.sleep(10);
 			} catch (InterruptedException e) {

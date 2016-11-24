@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 import piece.Piece;
 
-public class Loc implements Serializable {
+public class Location implements Serializable {
 
 	private static final long serialVersionUID = 7120348557326791298L;
 	private int row;
 	private int column;
 	private Piece piece;
 
-	public Loc(int r, int c) {
+	public Location(int r, int c) {
 		row = r;
 		column = c;
 	}

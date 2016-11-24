@@ -21,7 +21,10 @@ public class ServerUI extends JFrame {
 	public static DefaultListModel listModel;
 	private JList list;
 	public static JTextField playersTextField;
-
+	
+	/** 
+	 * Creating server window
+	 */
 	public ServerUI() {
 		setTitle("Bughouse server");
 		setResizable(false);
@@ -51,9 +54,8 @@ public class ServerUI extends JFrame {
 		btnStartGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (server.getNumClients() == 0) {
-					JOptionPane
-							.showMessageDialog(getParent(),
-									"Cannot start.\nError code: There are no other players.");
+					JOptionPane.showMessageDialog(getParent(),
+							"Cannot start.\nError code: There are no other players.");
 					return;
 				}
 				try {

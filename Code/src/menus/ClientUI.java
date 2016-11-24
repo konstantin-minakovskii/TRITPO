@@ -21,7 +21,10 @@ public class ClientUI extends JFrame {
 	private JRadioButton rdbtnSelectAServer, rdbtnManualConnection;
 	private JList list;
 	private DefaultListModel listModel;
-
+	
+	/** 
+	 * Creating client window
+	 */
 	public ClientUI() {
 		setTitle("Bughouse client");
 		setResizable(false);
@@ -64,8 +67,7 @@ public class ClientUI extends JFrame {
 				if (rdbtnManualConnection.isSelected()) {
 					ipAddress = textField.getText();
 				} else if (rdbtnSelectAServer.isSelected()) {
-					ipAddress = (String) (listModel.getElementAt(list
-							.getLeadSelectionIndex()));
+					ipAddress = (String) (listModel.getElementAt(list.getLeadSelectionIndex()));
 				}
 				System.out.println("starting game");
 				Game game = new Game(new Client(ipAddress));
@@ -116,14 +118,12 @@ public class ClientUI extends JFrame {
 	private void scanForGames(int timeout) {
 		try {
 			String ipAddress = InetAddress.getLocalHost().getHostAddress();
-			String beginningIp = ipAddress.substring(0,
-					ipAddress.lastIndexOf(".") + 1);
+			String beginningIp = ipAddress.substring(0, ipAddress.lastIndexOf(".") + 1);
 			for (int i = 0; i < 255; i++) {
 				if (i % 50 == 0) {
 					System.out.println(beginningIp + i);
 				}
-				if (portIsOpen(beginningIp + i, Constants.BROADCAST_PORT,
-						timeout)) {
+				if (portIsOpen(beginningIp + i, Constants.BROADCAST_PORT, timeout)) {
 					listModel.addElement("" + beginningIp + i);
 				}
 			}
